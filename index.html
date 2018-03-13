@@ -28,15 +28,16 @@
         var boxes = document.querySelectorAll('.box');
 
         function handleChangeColors() {
+            var self = this;
             if (this.parentNode.dataset.color === 'white') {
-                boxes.forEach(box => {
+                boxes.forEach(function (box) {
                     var originalColor = box.dataset.color;
                     replaceColors(box, originalColor);
                 });       
             } else {
-                boxes.forEach(box => {
+                boxes.forEach(function (box) {
                     if (box.dataset.color === 'white') return;
-                    var newColor = this.parentNode.dataset.color;
+                    var newColor = self.parentNode.dataset.color;
                     replaceColors(box, newColor);
                 });
             }
