@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <title>Chris Perkins || Charles Schwab Coding Challenge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--[if IE]>
+        <link rel="stylesheet" type="text/css" href="style-ie.css">
+    <![endif]-->
+</head>
+<body>
+    <main class="container">
+        <div class="box white" data-color="white">
+            <button type="button" class="box-button">Reset</button>
+        </div>
+        <div class="box red" data-color="red">
+            <button type="button" class="box-button">Red</button>
+        </div>
+        <div class="box green" data-color="green">
+            <button type="button" class="box-button">Green</button>
+        </div>
+        <div class="box blue" data-color="blue">
+            <button type="button" class="box-button">Blue</button>
+        </div>                
+    </main>
+    
+    <script>
+        var buttons = document.querySelectorAll('.box-button');
+        var boxes = document.querySelectorAll('.box');
+
+        function handleChangeColors() {
+            if (this.parentNode.dataset.color === 'white') {
+                boxes.forEach(box => {
+                    var originalColor = box.dataset.color;
+                    replaceColors(box, originalColor);
+                });       
+            } else {
+                boxes.forEach(box => {
+                    if (box.dataset.color === 'white') return;
+                    var newColor = this.parentNode.dataset.color;
+                    replaceColors(box, newColor);
+                });
+            }
+        }
+
+        function replaceColors(box, color) {
+            box.classList.remove('red', 'green', 'blue');
+            box.classList.add(color);
+        }
+
+        buttons.forEach(function (button) {
+            button.addEventListener('click', handleChangeColors);
+        });
+    </script>
+</body>

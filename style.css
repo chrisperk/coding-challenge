@@ -1,0 +1,80 @@
+/* 
+    After our phone interview I researched box-sizing industry standards. I learned that although the standard intial CSS box-sizing value is content-box, the industry preferred approach is to set element box-sizing to border-box because it becomes easier to think about the element's combined content, padding, and border as a percentage of the page, simplifying the process of developing responsive layouts.
+ */
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.box {
+    max-width: 230px;
+    width: 25%;
+    border: 1px solid black;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.box:before {
+    content: '';
+    display: table;
+    padding-top: 100%;
+}
+
+.box-button:hover {
+    cursor: pointer;
+}
+
+.white {
+    background-color: white;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;    
+}
+
+.blue {
+    background-color: blue;
+}
