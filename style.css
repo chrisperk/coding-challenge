@@ -1,6 +1,6 @@
 /* 
     After our phone interview I researched box-sizing industry standards. 
-    I learned that although the standard intial CSS box-sizing value is 
+    I learned that although the standard initial CSS box-sizing value is 
     content-box, the industry preferred approach is to set element box-sizing 
     to border-box because it becomes easier to think about the element's 
     combined content, padding, and border as a percentage of the page, 
